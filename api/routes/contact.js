@@ -8,4 +8,11 @@ router.get('/', (req, res, next) => {
   })
 })
 
+// POST
+router.post('/', (req, res, next) => {
+  res.status(201).json({
+    message: 'Hello, I am POST Route'
+  })
+})
+
 module.exports = router
