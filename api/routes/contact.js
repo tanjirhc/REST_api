@@ -15,10 +15,19 @@ router.post('/', (req, res, next) => {
   })
 })
 
-router.get('/:id', (req, res, next) => {
-  const id = req.params.id
+router.get('/:id', (req, res, next) => {  
   res.json({
-    id
+    message: 'I am a single Contact'
+  })
+})
+router.put('/:id', (req, res, next) => {  
+  res.json({
+    message: 'I am a single Contact'
+  })
+})
+router.delete('/:id', (req, res, next) => {  
+  res.json({
+    message: 'I am a single Contact'
   })
 })
 
