@@ -1,5 +1,7 @@
 const express = require('express')
 
+const contactRoute = require('./api/routes/contact')
+
 const app = express()
 
 const PORT = process.env.PORT || 4000
