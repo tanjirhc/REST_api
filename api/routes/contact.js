@@ -15,4 +15,11 @@ router.post('/', (req, res, next) => {
   })
 })
 
+router.get('/:id', (req, res, next) => {
+  console.log(req.url);
+  res.json({
+    id: req.url
+  })
+})
+
 module.exports = router
