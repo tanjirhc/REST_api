@@ -16,9 +16,9 @@ router.post('/', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-  console.log(req.url);
+  const id = req.params.id
   res.json({
-    id: req.url
+    id
   })
 })
 
