@@ -6,6 +6,10 @@ const app = express()
 
 const PORT = process.env.PORT || 4000
 
+app.use((req, res, next) => {
+  console.log('I am a Middleware Function');
+})
+
 app.use('/api/contacts', contactRoute)
 
 app.get('/', (req, res) => {
