@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const contactRoute = require('./api/routes/contact')
 
 const app = express()
-app.use(morgan())
+app.use(morgan('dev'))
 
 const PORT = process.env.PORT || 4000
 
