@@ -10,8 +10,14 @@ router.get('/', (req, res, next) => {
 
 // POST
 router.post('/', (req, res, next) => {
+
+  const name = req.body.name
+  const email = req.body.email
+
   res.status(201).json({
-    message: 'Hello, I am POST Route'
+    message: 'Hello, I am POST Route',
+    name,
+    email
   })
 })
 
