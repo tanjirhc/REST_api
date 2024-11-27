@@ -7,6 +7,9 @@ const contactRoute = require('./api/routes/contact')
 const app = express()
 app.use(morgan('dev'))
 
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json)
+
 const PORT = process.env.PORT || 4000
 
 
