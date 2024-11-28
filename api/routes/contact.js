@@ -12,7 +12,20 @@ router.get('/', (req, res, next) => {
 // POST
 router.post('/', (req, res, next) => {
 
+  const contact = new Contact({
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email
+  })
   
+  contact.save()
+   .then(data => {
+    res.status(201).json({
+      message: 'Contact Added',
+      contact: data
+    })
+   })
+   .catch(err => console.log(err))
 })
 
 router.get('/:id', (req, res, next) => {  
