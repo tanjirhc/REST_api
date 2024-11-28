@@ -62,6 +62,14 @@ app.get('/demo', (req, res) => {
     .catch(err => console.log(err))
 })
 
+app.get('/get', (req, res) => {
+  Demo.find()
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => console.log(err))
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 })
