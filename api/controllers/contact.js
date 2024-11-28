@@ -1,6 +1,6 @@
 const Contact = require('../models/Contact')
 
-const getAllContactController = (res, res, next) => {
+const getAllContactController = (req, res, next) => {
   Contact.find()
   .then(contacts => {
     res.status(200).json({
