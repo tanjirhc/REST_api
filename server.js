@@ -7,12 +7,12 @@ const contactRoute = require('./api/routes/contact')
 const app = express()
 app.use(morgan('dev'))
 
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
 const PORT = process.env.PORT || 4000
 
-app.use((req, res, next) => {
-  console.log('I am a Middleware Function')
-  next()
-})
+
 
 app.use('/api/contacts', contactRoute)
 
