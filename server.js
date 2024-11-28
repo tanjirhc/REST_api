@@ -4,6 +4,17 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/contacts-db');
+
+const db = mongoose.connection
+
+db.on('error', (err) => {
+  console.log(err);
+})
+
+db.once('open', () => {
+  console.log('Database Connection Successful');
+})
 
 const contactRoute = require('./api/routes/contact')
 
