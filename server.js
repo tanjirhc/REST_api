@@ -18,20 +18,7 @@ db.once('open', () => {
 
 const contactRoute = require('./api/routes/contact')
 
-const Schema = mongoose.Schema
-const demoSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    minlength: 3
-  },
-  phone: {
-    type: String,
-    required: true
-  }
-})
 
-const Demo = mongoose.model('Demo', demoSchema)
 const app = express()
 app.use(morgan('dev'))
 
@@ -49,26 +36,7 @@ app.get('/', (req, res) => {
   res.send('<div><h1>Hello World</h1><p>Hello Fleckians</p></div>')
 })
 
-app.get('/demo', (req, res) => {
-  const demo = new Demo({
-    name: 'Rubina Akter',
-    phone: '01741441303'
-  })  
 
-  demo.save()
-    .then(data => {
-      res.json({data})
-    })
-    .catch(err => console.log(err))
-})
-
-app.get('/get', (req, res) => {
-  Demo.find()
-    .then(data => {
-      res.json(data)
-    })
-    .catch(err => console.log(err))
-})
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
