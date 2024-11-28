@@ -39,3 +39,8 @@ const postNewContactController = (req, res, next) => {
     })
   })
 }
+
+module.exports = {
+  getAllContactController,
+  postNewContactController
+}
