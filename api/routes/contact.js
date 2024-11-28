@@ -6,7 +6,20 @@ const Contact = require('../models/Contact')
 
 // Get
 router.get('/', (req, res, next) => {
-  
+  Contact.find()
+    .then(contacts => {
+      res.status(200).json({
+        message: 'All Contacts',
+        contacts
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({
+        message: 'Error Occured',
+        error: err
+      })
+    })
 })
 
 // POST
@@ -25,7 +38,13 @@ router.post('/', (req, res, next) => {
       contact: data
     })
    })
-   .catch(err => console.log(err))
+   .catch(err => {
+    console.log(err)
+    res.status(500).json({
+      message: 'Error Occured',
+      error: err
+    })
+  })
 })
 
 router.get('/:id', (req, res, next) => {  
