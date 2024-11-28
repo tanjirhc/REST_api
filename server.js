@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const contactRoute = require('./api/routes/contact')
 
 const app = express()
+app.use(morgan('dev'))
 
 const PORT = process.env.PORT || 4000
 
