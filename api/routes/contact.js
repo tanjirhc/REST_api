@@ -1,27 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
-const contacts = []
+const Contact = require('../models/Contact')
+
 
 // Get
 router.get('/', (req, res, next) => {
-  res.status(200).json({
-    contacts
-  })
+  
 })
 
 // POST
 router.post('/', (req, res, next) => {
 
-  contacts.push({
-    name: req.body.name,
-    email: req.body.email
-  })
-
-  res.status(201).json({
-    message: 'Data Saved',
-   
-  })
+  
 })
 
 router.get('/:id', (req, res, next) => {  
