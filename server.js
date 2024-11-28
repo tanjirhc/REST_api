@@ -18,6 +18,20 @@ db.once('open', () => {
 
 const contactRoute = require('./api/routes/contact')
 
+const Schema = mongoose.Schema
+const contactSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 3
+  },
+  phone: {
+    type: String,
+    required: true
+  }
+})
+
+const Contact = mongoose.model('Contact', contactSchema)
 const app = express()
 app.use(morgan('dev'))
 
