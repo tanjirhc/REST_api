@@ -3,6 +3,8 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+const mongoose = require('mongoose')
+
 const contactRoute = require('./api/routes/contact')
 
 const app = express()
