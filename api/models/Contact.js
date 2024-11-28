@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 const Schema = mongoose.Schema
 
 const ContactSchema = new Schema({
@@ -19,7 +20,7 @@ const ContactSchema = new Schema({
     trim: true,
     validate: {
       validator: (v) => {
-
+        return validator.isEmail(v)
       },
       message: `${v} is not an email`
     }
