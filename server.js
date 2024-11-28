@@ -49,6 +49,18 @@ app.get('/', (req, res) => {
   res.send('<div><h1>Hello World</h1><p>Hello Fleckians</p></div>')
 })
 
+app.get('/demo', (req, res) => {
+  const demo = new Demo({
+    name: 'Tanjir Hasan',
+    phone: '01741441303'
+  })  
+
+  demo.save()
+    .then(data => {
+      res.json({data})
+    })
+    .catch(err => console.log(err))
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
