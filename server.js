@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
 app.get('/demo', (req, res) => {
   const demo = new Demo({
-    name: 'Tanjir Hasan',
+    name: 'Rubina Akter',
     phone: '01741441303'
   })  
 
