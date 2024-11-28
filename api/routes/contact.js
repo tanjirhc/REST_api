@@ -14,6 +14,8 @@ router.post('/', (req, res, next) => {
   const name = req.body.name
   const email = req.body.email
 
+  console.log(name, email);
+
   res.status(201).json({
     message: 'Hello, I am POST Route',
     name,
