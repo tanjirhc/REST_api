@@ -22,7 +22,7 @@ const ContactSchema = new Schema({
       validator: (v) => {
         return validator.isEmail(v)
       },
-      message: `${v} is not an email`
+      message: '${v} is not an email'
     }
   }
 })
