@@ -42,8 +42,20 @@ const postNewContactController = (req, res, next) => {
 
 const getSingleContact = (req, res, next) => {
   let id = req.params.id
-  console.log(`URL PARAMS = ${id}`)
-  next()
+  
+  Contact.findById(id)
+    .then(contact => {
+      res.status(200).json({
+        contact
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({
+        message: 'Error Occured',
+        error: err
+      })
+    })
 }
 
 module.exports = {
