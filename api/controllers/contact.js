@@ -42,7 +42,7 @@ const postNewContactController = (req, res, next) => {
 
 const getSingleContact = (req, res, next) => {
   let id = req.params.id
-  console.log(id)
+  console.log(`URL PARAMS = ${id}`)
   next()
 }
 
