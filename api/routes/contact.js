@@ -11,9 +11,7 @@ router.get('/', contactController.getAllContactController)
 // POST
 router.post('/', contactController.postNewContactController)
 
-router.get('/:id', (req, res, next) => {  
-  
-})
+router.get('/:id', contactController.getSingleContact)
 
 router.put('/:id', (req, res, next) => {  
   res.json({
