@@ -12,9 +12,7 @@ router.get('/', contactController.getAllContactController)
 router.post('/', contactController.postNewContactController)
 
 router.get('/:id', (req, res, next) => {  
-  res.json({
-    message: 'I am a single Contact'
-  })
+  
 })
 
 router.put('/:id', (req, res, next) => {  

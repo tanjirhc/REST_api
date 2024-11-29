@@ -40,7 +40,14 @@ const postNewContactController = (req, res, next) => {
   })
 }
 
+const getSingleContact = (req, res, next) => {
+  let id = req.params.id
+  console.log(id)
+  next()
+}
+
 module.exports = {
   getAllContactController,
-  postNewContactController
+  postNewContactController,
+  getSingleContact
 }
