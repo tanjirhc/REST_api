@@ -3,8 +3,19 @@ const bcrypt = require('bcrypt')
 const User = require('../models/User')
 
 const registerController = (req, res, next) => {
-  let user = new User({
-    email: req.body.email,
-    
+  bcrypt.hash(req.body.password, 10, (err, hash) => {
+    if (err) {
+      res.json({
+        error: err
+      })
+    }
+
+    res.json({
+      hash
+    })
   })
+}
+
+module.exports = {
+  registerController
 }
