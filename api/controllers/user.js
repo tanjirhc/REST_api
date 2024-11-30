@@ -14,6 +14,15 @@ const registerController = (req, res, next) => {
       email: req.body.email,
       password: hash
     })
+
+    user.save()
+      .then()
+      .cathc(error => {
+        res.json({
+          error
+        })
+      })
+
   })
 }
 
