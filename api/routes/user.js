@@ -9,8 +9,6 @@ router.post('/login', (req, res, next) => {
 
 router.post('/register', userController.registerController)
 
-router.get('/users', (req, res, next) => {
-  
-})
+router.get('/users', userController.getAllUser)
 
 module.exports = router
