@@ -87,7 +87,12 @@ const editContact = (req, res, next) => {
   }
 
   Contact.findByIdAndUpdate(id, {$set: updatedContact})
-    .then()
+    .then(contact => {
+      res.json({
+        message: 'Updated Successfully',
+        contact
+      })
+    })
     .catch(err => {
       console.log(err)
       res.status(500).json({
