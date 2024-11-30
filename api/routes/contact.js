@@ -13,11 +13,7 @@ router.post('/', contactController.postNewContactController)
 
 router.get('/:id', contactController.getSingleContact)
 
-router.put('/:id', (req, res, next) => {  
-  res.json({
-    message: 'I am a PUT Route'
-  })
-})
+router.put('/:id', contactController.editContact)
 
 router.delete('/:id', contactController.deleteContact)
 
