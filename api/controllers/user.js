@@ -38,8 +38,14 @@ const getAllUser = (req, res, next) => {
         users
       })
     })
+    .catch(error => {
+      res.json({
+        error
+      })
+    })
 }
 
 module.exports = {
-  registerController
+  registerController,
+  getAllUser
 }
