@@ -16,7 +16,12 @@ const registerController = (req, res, next) => {
     })
 
     user.save()
-      .then()
+      .then(result => {
+        res.status(201).json({
+          message: 'User Created Successfully',
+          user: result
+        })
+      })
       .cathc(error => {
         res.json({
           error
