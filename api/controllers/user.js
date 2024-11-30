@@ -31,6 +31,15 @@ const registerController = (req, res, next) => {
   })
 }
 
+const getAllUser = (req, res, next) => {
+  User.find()
+    .then(users => {
+      res.json({
+        users
+      })
+    })
+}
+
 module.exports = {
   registerController
 }
