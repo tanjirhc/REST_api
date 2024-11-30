@@ -22,7 +22,7 @@ const registerController = (req, res, next) => {
           user: result
         })
       })
-      .cathc(error => {
+      .catch(error => {
         res.json({
           error
         })
