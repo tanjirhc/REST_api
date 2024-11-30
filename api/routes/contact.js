@@ -19,10 +19,6 @@ router.put('/:id', (req, res, next) => {
   })
 })
 
-router.delete('/:id', (req, res, next) => {  
-  res.json({
-    message: 'I am a Delete Route'
-  })
-})
+router.delete('/:id', contactController.deleteContact)
 
 module.exports = router
