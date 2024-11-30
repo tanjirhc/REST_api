@@ -80,5 +80,6 @@ const deleteContact = (req, res, next) => {
 module.exports = {
   getAllContactController,
   postNewContactController,
-  getSingleContact
+  getSingleContact,
+  deleteContact
 }
