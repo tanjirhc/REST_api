@@ -106,5 +106,6 @@ module.exports = {
   getAllContactController,
   postNewContactController,
   getSingleContact,
-  deleteContact
+  deleteContact,
+  editContact
 }
