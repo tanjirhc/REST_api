@@ -17,6 +17,7 @@ db.once('open', () => {
 })
 
 const contactRoute = require('./api/routes/contact')
+const userRoute = require('./api/routes/user')
 
 
 const app = express()
