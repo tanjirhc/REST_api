@@ -9,10 +9,10 @@ const registerController = (req, res, next) => {
         error: err
       })
     }
-
-    res.json({
-      hash,
-      original: req.body.password
+    
+    let user = new user({
+      email: req.body.email,
+      password: hash
     })
   })
 }
