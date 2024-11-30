@@ -58,6 +58,20 @@ const getSingleContact = (req, res, next) => {
     })
 }
 
+const deleteContact = (req, res, next) => {
+  let id = req.params.id
+
+  Contact.findByIdAndDelete(id)
+    .then()
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({
+        message: 'Error Occured',
+        error: err
+      })
+    })
+}
+
 module.exports = {
   getAllContactController,
   postNewContactController,
