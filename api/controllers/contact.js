@@ -62,7 +62,12 @@ const deleteContact = (req, res, next) => {
   let id = req.params.id
 
   Contact.findByIdAndDelete(id)
-    .then()
+    .then(result => {
+      res.json({
+        message: 'Contact Deleted',
+        result
+      })
+    })
     .catch(err => {
       console.log(err)
       res.status(500).json({
