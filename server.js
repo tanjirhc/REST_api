@@ -20,6 +20,7 @@ const contactRoute = require('./api/routes/contact')
 const userRoute = require('./api/routes/user')
 
 
+
 const app = express()
 app.use(morgan('dev'))
 
@@ -32,7 +33,7 @@ const PORT = process.env.PORT || 4000
 
 
 app.use('/api/contacts', contactRoute)
-app.use('/api/users', userRoute)
+// app.use('/api/users', userRoute)
 
 app.get('/', (req, res) => {
   res.send('<div><h1>Hello World</h1><p>Hello Fleckians</p></div>')
