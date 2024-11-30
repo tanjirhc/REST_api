@@ -80,5 +80,6 @@ const getAllUser = (req, res, next) => {
 
 module.exports = {
   registerController,
-  getAllUser
+  getAllUser,
+  loginController
 }
