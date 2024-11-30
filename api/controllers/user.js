@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt')
+
 const User = require('../models/User')
 
 const registerController = (req, res, next) => {
