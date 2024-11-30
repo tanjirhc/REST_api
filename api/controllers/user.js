@@ -10,7 +10,7 @@ const registerController = (req, res, next) => {
       })
     }
     
-    let user = new user({
+    let user = new User({
       email: req.body.email,
       password: hash
     })
