@@ -12,3 +12,5 @@ router.post('/register', (req, res, next) => {
 router.get('/users', (req, res, next) => {
   
 })
+
+module.exports = router
