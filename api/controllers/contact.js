@@ -77,6 +77,26 @@ const deleteContact = (req, res, next) => {
     })
 }
 
+const editContact = (req, res, next) => {
+  let id = req.params.id
+
+  let updatedContact = {
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email
+  }
+
+  Contact.findByIdAndUpdate(id, {$set: updatedContact})
+    .then()
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({
+        message: 'Error Occured',
+        error: err
+      })
+    })
+}
+
 module.exports = {
   getAllContactController,
   postNewContactController,
