@@ -11,7 +11,8 @@ const registerController = (req, res, next) => {
     }
 
     res.json({
-      hash
+      hash,
+      original: req.body.password
     })
   })
 }
