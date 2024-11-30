@@ -31,6 +31,39 @@ const registerController = (req, res, next) => {
   })
 }
 
+const loginController = (req, res, next) => {
+  
+  let email = req.body.email
+  let password = req.body.password
+
+  User.findOne({email})
+    .then(user => {
+      if (user) {
+        bcrypt.compare(password, user.password, (err, result) => {
+          if (err) {
+            res.json({
+              message: 'Error Occured'
+            })
+          }
+
+          if (result) {
+              res.json({
+                message: 'Login Successful'
+              })
+          } else {
+            res.json({
+              message: 'Login Failed. Password Doesn\'t Match'
+            })
+          }
+        })
+      } else {
+        res.json({
+          message: 'User not found'
+        })
+      }
+    })
+}
+
 const getAllUser = (req, res, next) => {
   User.find()
     .then(users => {
