@@ -48,6 +48,9 @@ const loginController = (req, res, next) => {
           }
 
           if (result) {
+
+              let token = jwt.sign({email: user.email, _id: user._id}, 'SECRET', {expiresIn: '2h'})
+
               res.json({
                 message: 'Login Successful'
               })
