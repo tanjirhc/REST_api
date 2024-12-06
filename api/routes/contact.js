@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const authenticate = require('../middleware/authenticate')
 
 
 const contactController = require('../controllers/contact')
@@ -9,7 +10,7 @@ const contactController = require('../controllers/contact')
 router.get('/', contactController.getAllContactController)
 
 // POST
-router.post('/', contactController.postNewContactController)
+router.post('/', authenticate, contactController.postNewContactController)
 
 router.get('/:id', contactController.getSingleContact)
 
