@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const valid = require('validator')
 const Schema = mongoose.Schema
 
-const UserSchema = new Schema({
+const userSchema = new Schema({
   email: {
     type: String,
     trim: true,
@@ -16,5 +16,5 @@ const UserSchema = new Schema({
   password: String
 })
 
-const User = mongoose.model('User', UserSchema)
+const User = mongoose.model('User', userSchema)
 module.exports = User
