@@ -1,7 +1,12 @@
 const jwt = require('jsonwebtoken')
 
-try {
+const authenticate = (req, res, next) => {
 
-} catch(error) {
-  
+  try {
+
+  } catch(error) {
+    res.json({
+      message: "Authentication Failed"
+    })
+  }
 }
